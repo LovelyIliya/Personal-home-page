@@ -1,0 +1,380 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+//---------响应式样式--------------------
+@media screen and (max-width: 420px) {
+  .navbar {
+    h4 {
+      position: absolute;
+      color: white;
+      left: 50%;
+      margin-top: 5%;
+      font-size: 15px;
+      transform: translateX(-50%);
+    }
+  }
+  .anav li a {
+    color: #fff;
+    display: block;
+    height: 30px;
+    lineHeight: 30px;
+
+    &:nth-child(1) {
+      margin-top: 5px;
+    }
+
+    &:after {
+      content: '';
+      width: 200px;
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      height: 1px;
+    }
+  }
+  .touxiang {
+    width: 80px;
+    height: 80px;
+    top: 33%;
+    animation: land2 1s ease-out;
+  }
+  .name {
+    font-size: 36px;
+    top: 55%;
+    animation: rise2 1s ease-out;
+  }
+
+  #about {
+    .t1:after {
+      height: 1px;
+      width: 17em;
+      bottom: -5%;
+    }
+  }
+
+  #contact {
+    height: 100vh;
+
+    .card {
+      width: 90vw;
+      height: 90vh;
+    }
+  }
+}
+
+//-----------------------------------------
+@media screen and (min-width: 420px) {
+  .home {
+    min-width: 1240px;
+  }
+  .navbar {
+    padding-top: 0.5%;
+
+    h4 {
+      position: absolute;
+      left: 15vw;
+      color: white;
+    }
+
+    .collapse {
+      position: relative;
+
+      ul {
+        display: flex;
+        position: absolute;
+        right: 15vw;
+
+        li {
+          text-align: center;
+          padding-right: 10px;
+
+          a {
+            display: block;
+            color: white;
+            cursor: pointer;
+            width: 50px;
+            height: 40px;
+            text-decoration: none;
+            line-height: 40px;
+            font-size: 16px;
+            border-radius: 5px;
+
+            &:hover {
+              transition: 0.5s;
+              background: rgba(220, 220, 220, .5);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .touxiang {
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    animation: land 1s ease-out;
+  }
+  .name {
+    font-size: 72px;
+    top: 45%;
+    animation: rise 1s ease-out;
+  }
+  #about {
+    .t1:after {
+      height: 80%;
+      width: 1px;
+      right: 0;
+      top: 50%;
+      transform: translateY(-35%);
+    }
+  }
+  #exhibition {
+    .row {
+      width: 70vw;
+    }
+    .box:hover {
+      .mask {
+        transform: translate(0);
+        transition: 0.5s linear;
+      }
+      img{
+        transform: scale(.95);
+        transition: .8s linear;
+      }
+    }
+    .mask{
+      transform: translate(-100%, -100%);
+    }
+  }
+  #contact {
+    height: 70vh;
+
+    .card {
+      width: 40vw;
+      height: 58vh;
+    }
+  }
+}
+
+//----------------动画-----------------
+@keyframes land {
+  from {
+    top: -50%;
+  }
+  to {
+    top: 10%;
+  }
+}
+
+@keyframes land2 {
+  from {
+    top: -50%;
+  }
+  to {
+    top: 33%;
+  }
+}
+
+@keyframes rise {
+  from {
+    top: 150%;
+  }
+  to {
+    top: 45%;
+  }
+}
+
+@keyframes rise2 {
+  from {
+    top: 150%;
+  }
+  to {
+    top: 55%;
+  }
+}
+
+//-----全局样式--------------------------------
+//主页
+.home {
+  width: contain;
+  height: 60vh;
+  background: url("../images/bg.jpeg") no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+
+  .container-fluid {
+    .navbar-toggle {
+      background-color: rgba(220, 220, 220, .3);
+
+      .icon-bar {
+        background-color: black;
+      }
+    }
+  }
+
+  .touxiang {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+
+  .name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+  }
+}
+//信息
+#about {
+  padding: 10vh 0;
+
+  .context {
+    width: 70vw;
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(220, 220, 220, .8);
+    box-shadow: 0px 0px 25px rgb(220, 220, 220);
+    padding-bottom: 1vh;
+
+    .t1:after {
+      content: '';
+      background: rgb(220, 220, 220);
+      position: absolute;
+    }
+
+    h3 {
+      font-weight: bold;
+    }
+  }
+}
+//展示
+#exhibition {
+  .h2 {
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .row {
+    margin: 0 auto;
+
+    .col-md-4 {
+      .box {
+        height: 30vh;
+        text-align: center;
+        position: relative;
+        margin: 2vh 0;
+        box-shadow: 0 0 20px rgb(100, 100, 100);
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .mask {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, .4);
+
+        .h2 {
+          font-size: 2em;
+          line-height: 8em;
+          color: white;
+          height: 50%;
+        }
+
+        .text {
+          font-size: 1.15em;
+          color: white;
+          margin-top: 2em;
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+      }
+    }
+  }
+}
+//联系
+#contact {
+  margin-top: 10vh;
+  width: 100%;
+  background: url("../images/staticmap.png") no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+
+  .card {
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .row {
+      padding: 3rem;
+
+      .inp1 {
+        position: relative;
+        margin-top: 2.5vh;
+        .form-control{
+          padding-left: 40px;
+          border-radius: 30px;
+        }
+        .glyphicon {
+          position: absolute;
+          top: 50%;
+          left: 15px;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .inp2{
+      margin-top: 3vh;
+      height: 20vh;
+    }
+    .btn{
+      background: #2aaf35;
+      color: white;
+      font-weight: 200;
+      font-size: 12px;
+      width: 5em;
+      height: 3.2em;
+      margin-top: 3vh;
+    }
+    .h3 {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .right{
+
+      img{
+        width: 49%;
+      }
+      img:nth-child(2){
+        transform: scale(.95);
+      }
+    }
+  }
+}
+//底部
+.bottom{
+  width: 100vw;
+  height: 8vh;
+  text-align: center;
+  padding: 1.5vh;
+}
