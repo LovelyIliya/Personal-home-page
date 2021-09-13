@@ -45,17 +45,10 @@
     animation: land2 1s ease-out;
   }
   .name {
-    font-size: 36px;
+    font-size: 28px;
     top: 55%;
     animation: rise2 1s ease-out;
-  }
-
-  #about {
-    .t1:after {
-      height: 1px;
-      width: 17em;
-      bottom: -5%;
-    }
+    white-space: nowrap;
   }
 
   #contact {
@@ -346,7 +339,7 @@
       margin-top: 3vh;
       height: 20vh;
     }
-    .btn{
+    .nbtn{
       background: #2aaf35;
       color: white;
       font-weight: 200;
@@ -354,6 +347,7 @@
       width: 5em;
       height: 3.2em;
       margin-top: 3vh;
+      border: none;
     }
     .h3 {
       font-weight: bold;
