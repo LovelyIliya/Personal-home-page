@@ -7,8 +7,16 @@ collapse.css({
 })
 
 $(function(){
-  // 获得前三个模块的高
-  let sum=$('.home').height()+$('#about').height()+($('#exhibition').height()/2)
+	let consum
+	let exsum
+	// 获得前两个模块的高
+	let threeHeight=$('.home').height()+$('#about').height()
+	
+	if(window.screen.width>420){		
+		consum=threeHeight+$('#exhibition').height()/2;
+	}else{
+		consum=threeHeight+$('#exhibition').height()-300;
+	}
   //锚点跳转动画
   $("a").click(function () {
     $("html, body").animate({scrollTop: $($(this).attr("href")).offset().top-80 +"px"}, 500);
@@ -26,16 +34,18 @@ $(function(){
         background:'none'
       })
     }
+		
+		
     // 给联系卡片增加动画
-    if (scrollTop>=sum) {
+    if (scrollTop>=consum) {
       $('#contact .card').css({
-        transition:'1s',
-        opacity: 1
+        transition:'0.5s',
+        transform:'translate(-50%, -50%) scale(1,1) '
       })
     }else {
       $('#contact .card').css({
-        transition:'1s',
-        opacity:0
+        transition:'0.5s',
+        transform:'translate(-50%, -50%) scale(0,0) '
       })
     }
   })
